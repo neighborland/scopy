@@ -1,8 +1,9 @@
 # Scopy
 
 [![Build Status](https://api.travis-ci.org/neighborland/scopy.png)](https://travis-ci.org/neighborland/scopy)
+[![Gem Version](https://badge.fury.io/rb/scopy.png)](http://badge.fury.io/rb/scopy)
 
-Scopy provides common ActiveRecord utility scopes as ActiveSupport concerns.
+Scopy provides common ActiveRecord utility scopes as ActiveSupport model concerns.
 
 Common scopes for the following attributes are provided:
 
@@ -28,6 +29,7 @@ Include the concern modules you would like to use in your models:
 class Dog < ActiveRecord::Base
   include Scopy::CreatedAtScopes
   include Scopy::IdScopes
+  include Scopy::NameScopes
 ```
 
 The following examples assume you have a model named `Dog`:
@@ -76,16 +78,16 @@ Dog.excluding(dog)
 ##### Scopy::NameScopes
 
 ```ruby
-Dog.name_like('snoop')
+Dog.name_like('snOOp')
 # => dogs with names containing 'snoop' (case insensitive)
 
-Dog.name_like('snoop', case_sensitive: true)
-# => dogs with names containing 'snoop' (case sensitive)
+Dog.name_like('Snoop', case_sensitive: true)
+# => dogs with names containing 'Snoop' (case sensitive)
 
-Dog.name_starts_with('snoop')
+Dog.name_starts_with('snOOp')
 # => dogs with names starting with 'snoop' (case insensitive)
 
-Dog.name_starts_with('snoop', case_sensitive: true)
-# => dogs with names starting with 'snoop' (case sensitive)
+Dog.name_starts_with('Snoop', case_sensitive: true)
+# => dogs with names starting with 'Snoop' (case sensitive)
 ```
 
