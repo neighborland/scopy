@@ -1,12 +1,14 @@
 # Scopy
 
+[![Build Status](https://api.travis-ci.org/neighborland/scopy.png)](https://travis-ci.org/neighborland/scopy)
+
 Scopy provides common ActiveRecord utility scopes as ActiveSupport concerns.
 
 Common scopes for the following attributes are provided:
 
-* created_at
-* id
-* name
+* `created_at`
+* `id`
+* `name`
 
 ## Install
 
@@ -30,7 +32,7 @@ class Dog < ActiveRecord::Base
 
 The following examples assume you have a model named `Dog`:
 
-### Scopy::CreatedAtScopes
+##### Scopy::CreatedAtScopes
 
 ```ruby
 Dog.newest
@@ -70,3 +72,20 @@ Dog.excluding_ids( [1, 2, 3] )
 Dog.excluding(dog)
 # => dogs excluding dog
 ```
+
+##### Scopy::NameScopes
+
+```ruby
+Dog.name_like('snoop')
+# => dogs with names containing 'snoop' (case insensitive)
+
+Dog.name_like('snoop', case_sensitive: true)
+# => dogs with names containing 'snoop' (case sensitive)
+
+Dog.name_starts_with('snoop')
+# => dogs with names starting with 'snoop' (case insensitive)
+
+Dog.name_starts_with('snoop', case_sensitive: true)
+# => dogs with names starting with 'snoop' (case sensitive)
+```
+
