@@ -8,11 +8,13 @@ module Scopy
         
     included do
       scope :name_like, ->(text, options={}) do
-        where("#{_lhs_name_column(options[:case_sensitive])} LIKE '%#{text}%'")
+        cs = options[:case_sensitive]
+        where("#{_lhs_name_column(cs)} LIKE '%#{_rhs_name_value(text, cs)}%'")
       end
       
       scope :name_starts_with, ->(text, options={}) do
-        where("#{_lhs_name_column(options[:case_sensitive])} LIKE '#{text}%'")
+        cs = options[:case_sensitive]
+        where("#{_lhs_name_column(cs)} LIKE '#{_rhs_name_value(text, cs)}%'")
       end      
     end
     
@@ -21,6 +23,10 @@ module Scopy
     module ClassMethods          
       def _lhs_name_column(case_sensitive)
         case_sensitive ? "#{self.table_name}.name" : "LOWER(#{self.table_name}.name)"
+      end
+      
+      def _rhs_name_value(text, case_sensitive)
+        case_sensitive ? text : text.try(:downcase)
       end
     end    
     

@@ -20,7 +20,7 @@ class NameScopesTest < Test::Unit::TestCase
     end
     
     should "find case insensitive" do
-      assert Dog.name_like("dog").include?(@dog)
+      assert Dog.name_like("doG").include?(@dog)
       assert_empty Dog.name_like("cat")
     end
   end
@@ -32,7 +32,7 @@ class NameScopesTest < Test::Unit::TestCase
     end
     
     should "find case insensitive" do
-      assert Dog.name_starts_with("snoop").include?(@dog)
+      assert Dog.name_starts_with("snOOp").include?(@dog)
       assert_empty Dog.name_starts_with("dogg")
     end    
   end
