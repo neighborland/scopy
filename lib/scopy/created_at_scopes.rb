@@ -3,7 +3,7 @@ module Scopy
     extend ActiveSupport::Concern
     
     included do
-      scope :newest, ->{ order("#{self.table_name}.created_at desc") }
+      scope :newest, ->{ order("#{self.table_name}.created_at DESC") }
       scope :oldest, ->{ order("#{self.table_name}.created_at") }
     
       scope :created_since, ->(since) do
