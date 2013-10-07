@@ -6,7 +6,7 @@ class IdScopesTest < Test::Unit::TestCase
   end
   
   setup do
-    @dog = Dog.create(name: "Boo")
+    @dog = Dog.create
   end
   
   teardown do
@@ -39,7 +39,7 @@ class IdScopesTest < Test::Unit::TestCase
     end
     
     should "not exclude" do
-      snoop = Dog.create(name: "Snoop")
+      snoop = Dog.create
       assert_equal [@dog], Dog.excluding(snoop)
     end    
   end

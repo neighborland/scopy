@@ -13,8 +13,8 @@ ActiveRecord::Base.establish_connection(
   database: ":memory:"
 )
 
-ActiveRecord::Schema.define do
-  unless ActiveRecord::Base.connection.tables.include? 'dogs'
+unless ActiveRecord::Base.connection.tables.include? 'dogs'
+  ActiveRecord::Schema.define do  
     create_table :dogs do |table|
       table.column :created_at, :datetime
       table.column :name, :string
