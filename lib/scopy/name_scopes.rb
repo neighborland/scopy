@@ -9,12 +9,12 @@ module Scopy
     included do
       scope :name_like, ->(text, options={}) do
         cs = options[:case_sensitive]
-        where("#{_lhs_name_column(cs)} LIKE '%#{_rhs_name_value(text, cs)}%'")
+        where("#{_lhs_name_column(cs)} LIKE ?", "%#{_rhs_name_value(text, cs)}%")
       end
       
       scope :name_starts_with, ->(text, options={}) do
         cs = options[:case_sensitive]
-        where("#{_lhs_name_column(cs)} LIKE '#{_rhs_name_value(text, cs)}%'")
+        where("#{_lhs_name_column(cs)} LIKE ?", "#{_rhs_name_value(text, cs)}%")
       end      
     end
     

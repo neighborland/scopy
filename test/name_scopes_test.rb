@@ -19,6 +19,11 @@ class NameScopesTest < Test::Unit::TestCase
       assert_empty Dog.name_like("cat", case_sensitive: true)
     end
     
+    should "find with quotes" do
+      o_dogg = Dog.create(name: "Snoop O'Doggly")
+      assert Dog.name_like("O'Dogg").include?(o_dogg)
+    end
+    
     should "find case insensitive" do
       assert Dog.name_like("doG").include?(@dog)
       assert_empty Dog.name_like("cat")
