@@ -4,7 +4,7 @@ module Scopy
     
     # note: case-sensitive like operations do not work as expected in Sqlite,
     # which we are using as the test database.
-    # see http://stackoverflow.com/questions/973541/how-to-set-sqlite3-to-be-case-insensitive-when-string-comparing
+    # see http://goo.gl/Lxxc4m
         
     included do
       scope :name_like, ->(text, options={}) do
