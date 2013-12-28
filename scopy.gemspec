@@ -20,9 +20,8 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake", "~> 10.1"
-  spec.add_development_dependency "test-unit", "~> 2.5"
+  spec.add_development_dependency "minitest", "~> 4.7"
   spec.add_development_dependency "mocha", "~> 0.14"
-  spec.add_development_dependency "shoulda-context", "~> 1.1"
   spec.add_development_dependency "sqlite3", "~> 1.3"
 
   spec.add_runtime_dependency "activerecord", ">= 3.2"

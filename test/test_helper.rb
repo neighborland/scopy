@@ -1,8 +1,7 @@
 require 'coveralls'
 Coveralls.wear!
 
-require 'test/unit'
-require 'shoulda-context'
+require 'minitest/autorun'
 require 'mocha/setup'
 require 'active_support'
 require 'active_record'
@@ -24,4 +23,3 @@ unless ActiveRecord::Base.connection.tables.include? 'dogs'
     end
   end
 end
- 
