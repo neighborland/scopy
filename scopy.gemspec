@@ -24,6 +24,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "mocha", "~> 0.14"
   spec.add_development_dependency "sqlite3", "~> 1.3"
 
-  spec.add_runtime_dependency "activerecord", ">= 3.2"
-  spec.add_runtime_dependency "activesupport", ">= 3.2"
+  spec.add_dependency "activerecord", ">= 3.2"
 end
