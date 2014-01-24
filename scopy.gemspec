@@ -25,6 +25,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake", "~> 10.1"
   spec.add_development_dependency "minitest", "~> 4.7"
-  spec.add_development_dependency "mocha", "~> 0.14"
+  spec.add_development_dependency "mocha", "~> 1.0"
   spec.add_development_dependency "sqlite3", "~> 1.3"
 end

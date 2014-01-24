@@ -2,7 +2,7 @@ require 'coveralls'
 Coveralls.wear!
 
 require 'minitest/autorun'
-require 'mocha/setup'
+require 'mocha/mini_test'
 require 'active_support'
 require 'active_record'
 require 'sqlite3'
