@@ -1,7 +1,7 @@
 # Scopy
 
-[![Gem Version](https://badge.fury.io/rb/scopy.png)](http://badge.fury.io/rb/scopy)
-[![Build Status](https://api.travis-ci.org/neighborland/scopy.png)](https://travis-ci.org/neighborland/scopy)
+[![Gem Version](http://img.shields.io/gem/v/scopy.svg)](http://rubygems.org/gems/scopy)
+[![Build Status](http://img.shields.io/travis/neighborland/scopy.svg)](https://travis-ci.org/neighborland/scopy)
 
 Scopy provides common ActiveRecord utility scopes as ActiveSupport model concerns.
 
