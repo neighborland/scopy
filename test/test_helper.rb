@@ -1,4 +1,4 @@
-if ENV['TRAVIS'] && RUBY_VERSION == '2.1.1'
+if ENV['TRAVIS'] && RUBY_VERSION == '2.1.2'
   require 'coveralls'
   Coveralls.wear!
 end
