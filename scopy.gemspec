@@ -8,14 +8,13 @@ Gem::Specification.new do |spec|
   spec.version       = Scopy::VERSION
   spec.authors       = ["Tee Parham"]
   spec.email         = ["tee@neighborland.com"]
-  spec.description   = %q{Rails ActiveRecord model concerns for common scopes}
-  spec.summary       = %q{Rails ActiveRecord common utility scopes for id, created_at, and name}
+  spec.description   = %q{Rails ActiveRecord scopes for id, created_at, and name}
+  spec.summary       = %q{Rails ActiveRecord scopes for id, created_at, and name}
   spec.homepage      = "https://github.com/neighborland/scopy"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files`.split($/)
+  spec.files         = Dir["LICENSE.txt", "README.md", "lib/**/*"]
   spec.executables   = []
-  spec.test_files    = spec.files.grep(%r{^(test)/})
   spec.require_paths = ["lib"]
 
   spec.required_ruby_version = ">= 1.9.3"
