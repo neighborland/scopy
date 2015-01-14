@@ -3,7 +3,7 @@
 [![Gem Version](http://img.shields.io/gem/v/scopy.svg)](http://rubygems.org/gems/scopy)
 [![Build Status](http://img.shields.io/travis/neighborland/scopy.svg)](https://travis-ci.org/neighborland/scopy)
 
-Scopy provides common ActiveRecord utility scopes as ActiveSupport model concerns.
+Scopy provides common ActiveRecord scopes as ActiveSupport model concerns.
 
 Common scopes for the following attributes are provided:
 
