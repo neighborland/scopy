@@ -58,8 +58,11 @@ Dog.created_on_day(1.day.ago)
 Dog.created_in_week(Date.parse("31/10/2013"))
 # => dogs created in the week Sunday-Saturday around October 31, 2013
 
-Dog.created_in_month(Date.parse("1/1/2013"))
+Dog.created_in_month(Time.new(2013, 1))
 # => dogs created in January 2013
+
+Dog.created_in_year(Time.new(2013))
+# => dogs created in 2013
 ```
 
 ##### Scopy::IdScopes
@@ -90,4 +93,3 @@ Dog.name_starts_with('snOOp')
 Dog.name_starts_with('Snoop', case_sensitive: true)
 # => dogs with names starting with 'Snoop' (case sensitive)
 ```
-
