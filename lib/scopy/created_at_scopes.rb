@@ -1,13 +1,13 @@
 module Scopy
   module CreatedAtScopes
     extend ActiveSupport::Concern
-    
+
     included do
       scope :newest, ->{ order("#{self.table_name}.created_at DESC") }
       scope :oldest, ->{ order("#{self.table_name}.created_at") }
-    
+
       scope :created_since, ->(since) do
-        where("#{self.table_name}.created_at > ?", since)
+        where("#{self.table_name}.created_at >= ?", since)
       end
 
       scope :created_before, ->(before) do
