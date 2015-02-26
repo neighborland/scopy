@@ -11,7 +11,7 @@ module Scopy
       end
 
       scope :created_before, -> (before) do
-        where("#{ self.table_name }.created_at < ?", before)
+        where("#{ self.table_name }.created_at <= ?", before)
       end
 
       scope :created_between, -> (from, to) do
