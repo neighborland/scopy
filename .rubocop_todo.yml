@@ -11,12 +11,6 @@
 Metrics/LineLength:
   Max: 97
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: SupportedStyles.
-Style/AccessModifierIndentation:
-  EnforcedStyle: outdent
-
 # Offense count: 5
 # Configuration parameters: Exclude.
 Style/Documentation:
@@ -27,14 +21,6 @@ Style/Documentation:
     - 'lib/scopy/id_scopes.rb'
     - 'lib/scopy/name_scopes.rb'
     - 'lib/scopy/version.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/EmptyLinesAroundModuleBody:
-  Exclude:
-    - 'lib/scopy/created_at_scopes.rb'
-    - 'lib/scopy/id_scopes.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -65,48 +51,11 @@ Style/RedundantSelf:
     - 'lib/scopy/id_scopes.rb'
     - 'lib/scopy/name_scopes.rb'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/SpaceAroundEqualsInParameterDefault:
-  Enabled: false
-
-# Offense count: 5
-# Cop supports --auto-correct.
-# Configuration parameters: SupportedStyles.
-Style/SpaceBeforeBlockBraces:
-  EnforcedStyle: no_space
-
-# Offense count: 4
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/SpaceInsideStringInterpolation:
-  Exclude:
-    - 'lib/scopy/created_at_scopes.rb'
-
 # Offense count: 18
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 Style/StringLiterals:
   Enabled: false
-
-# Offense count: 4
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/TrailingBlankLines:
-  Exclude:
-    - 'Rakefile'
-    - 'lib/scopy.rb'
-    - 'lib/scopy/id_scopes.rb'
-    - 'lib/scopy/name_scopes.rb'
-
-# Offense count: 29
-# Cop supports --auto-correct.
-Style/TrailingWhitespace:
-  Exclude:
-    - 'lib/scopy/name_scopes.rb'
-    - 'test/id_scopes_test.rb'
-    - 'test/name_scopes_test.rb'
 
 # Offense count: 2
 # Cop supports --auto-correct.
