@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.version       = Scopy::VERSION
   spec.authors       = ["Tee Parham"]
   spec.email         = ["tee@neighborland.com"]
-  spec.description   = %q{Rails ActiveRecord scopes for id, created_at, and name}
-  spec.summary       = %q{Rails ActiveRecord scopes for id, created_at, and name}
+  spec.description   = "Rails ActiveRecord scopes for id, created_at, and name"
+  spec.summary       = "Rails ActiveRecord scopes for id, created_at, and name"
   spec.homepage      = "https://github.com/neighborland/scopy"
   spec.license       = "MIT"
 

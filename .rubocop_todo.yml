@@ -36,13 +36,6 @@ Style/Lambda:
     - 'lib/scopy/created_at_scopes.rb'
     - 'lib/scopy/name_scopes.rb'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: PreferredDelimiters.
-Style/PercentLiteralDelimiters:
-  Exclude:
-    - 'scopy.gemspec'
-
 # Offense count: 18
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
