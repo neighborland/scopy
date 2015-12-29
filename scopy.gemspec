@@ -1,5 +1,5 @@
 # coding: utf-8
-require './lib/scopy/version'
+require "./lib/scopy/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "scopy"
