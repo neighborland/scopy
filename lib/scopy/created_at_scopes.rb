@@ -3,15 +3,15 @@ module Scopy
     extend ActiveSupport::Concern
 
     included do
-      scope :newest, -> { order("#{self.table_name}.created_at DESC") }
-      scope :oldest, -> { order("#{self.table_name}.created_at") }
+      scope :newest, -> { order("#{table_name}.created_at DESC") }
+      scope :oldest, -> { order("#{table_name}.created_at") }
 
       scope :created_since, ->(since) do
-        where("#{self.table_name}.created_at >= ?", since)
+        where("#{table_name}.created_at >= ?", since)
       end
 
       scope :created_before, ->(before) do
-        where("#{self.table_name}.created_at <= ?", before)
+        where("#{table_name}.created_at <= ?", before)
       end
 
       scope :created_between, ->(from, to) do

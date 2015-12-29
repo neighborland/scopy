@@ -22,7 +22,7 @@ module Scopy
 
     module ClassMethods
       def _lhs_name_column(case_sensitive)
-        case_sensitive ? "#{self.table_name}.name" : "LOWER(#{self.table_name}.name)"
+        case_sensitive ? "#{table_name}.name" : "LOWER(#{table_name}.name)"
       end
 
       def _rhs_name_value(text, case_sensitive)
