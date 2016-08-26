@@ -18,8 +18,6 @@ module Scopy
       end
     end
 
-    private
-
     module ClassMethods
       def _lhs_name_column(case_sensitive)
         case_sensitive ? "#{table_name}.name" : "LOWER(#{table_name}.name)"
