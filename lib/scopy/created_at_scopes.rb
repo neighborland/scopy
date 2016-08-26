@@ -7,11 +7,11 @@ module Scopy
       scope :oldest, -> { order("#{table_name}.created_at") }
 
       scope :created_since, ->(since) do
-        where("#{table_name}.created_at >= ?", since)
+        where("#{table_name}.created_at >= ?", since) if since
       end
 
       scope :created_before, ->(before) do
-        where("#{table_name}.created_at <= ?", before)
+        where("#{table_name}.created_at <= ?", before) if before
       end
 
       scope :created_between, ->(from, to) do

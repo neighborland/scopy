@@ -33,6 +33,10 @@ class CreatedAtScopesTest < MiniTest::Spec
       assert Dog.created_since(2.days.ago).include?(@snoop)
       refute Dog.created_since(2.days.ago).include?(@boo)
     end
+
+    it "does not restrict for nil date" do
+      assert_equal 2, Dog.created_since(nil).count
+    end
   end
 
   describe ".created_before" do
@@ -40,12 +44,22 @@ class CreatedAtScopesTest < MiniTest::Spec
       refute Dog.created_before(2.days.ago).include?(@snoop)
       assert Dog.created_before(2.days.ago).include?(@boo)
     end
+
+    it "does not restrict for nil date" do
+      assert_equal 2, Dog.created_before(nil).count
+    end
   end
 
   describe ".created_between" do
     it "includes between dates" do
       assert Dog.created_between(2.days.ago, Time.now).include?(@snoop)
       refute Dog.created_between(2.days.ago, Time.now).include?(@boo)
+    end
+
+    it "does not restrict for nil dates" do
+      assert_equal [@snoop], Dog.created_between(2.days.ago, nil).to_a
+      assert_equal [@boo], Dog.created_between(nil, 2.days.ago).to_a
+      assert_equal 2, Dog.created_between(nil, nil).count
     end
   end
 
