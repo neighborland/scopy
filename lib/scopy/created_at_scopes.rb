@@ -19,19 +19,22 @@ module Scopy
       end
 
       scope :created_on_day, ->(date) do
-        created_between date.beginning_of_day, date.end_of_day
+        created_between(date.beginning_of_day, date.end_of_day) if date
       end
 
       scope :created_in_week, ->(date, day_of_week = :sunday) do
-        created_between date.beginning_of_week(day_of_week), date.end_of_week(day_of_week)
+        created_between(
+          date.beginning_of_week(day_of_week),
+          date.end_of_week(day_of_week)
+        ) if date
       end
 
       scope :created_in_month, ->(date) do
-        created_between date.beginning_of_month, date.end_of_month
+        created_between(date.beginning_of_month, date.end_of_month) if date
       end
 
       scope :created_in_year, ->(date) do
-        created_between date.beginning_of_year, date.end_of_year
+        created_between(date.beginning_of_year, date.end_of_year) if date
       end
     end
   end
