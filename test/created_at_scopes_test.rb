@@ -68,6 +68,10 @@ class CreatedAtScopesTest < MiniTest::Spec
       assert Dog.created_since(2.days.ago).include?(@snoop)
       refute Dog.created_since(2.days.ago).include?(@boo)
     end
+
+    it "does not restrict for nil date" do
+      assert_equal 2, Dog.created_on_day(nil).count
+    end
   end
 
   describe ".created_in_week" do
@@ -75,6 +79,10 @@ class CreatedAtScopesTest < MiniTest::Spec
       lassie = Dog.create(created_at: 1.month.ago)
       assert Dog.created_in_week(1.day.ago).include?(@snoop)
       refute Dog.created_in_week(1.day.ago).include?(lassie)
+    end
+
+    it "does not restrict for nil date" do
+      assert_equal 2, Dog.created_in_week(nil).count
     end
   end
 
@@ -84,6 +92,10 @@ class CreatedAtScopesTest < MiniTest::Spec
       assert Dog.created_in_month(1.day.ago).include?(@snoop)
       refute Dog.created_in_month(1.day.ago).include?(lassie)
     end
+
+    it "does not restrict for nil date" do
+      assert_equal 2, Dog.created_in_month(nil).count
+    end
   end
 
   describe ".created_in_year" do
@@ -91,6 +103,11 @@ class CreatedAtScopesTest < MiniTest::Spec
       lassie = Dog.create(created_at: 2.years.ago)
       assert Dog.created_in_year(1.day.ago).include?(@snoop)
       refute Dog.created_in_year(1.day.ago).include?(lassie)
+    end
+
+    it "does not restrict for nil date" do
+      Dog.create(created_at: 2.years.ago)
+      assert_equal 3, Dog.created_in_year(nil).count
     end
   end
 end
