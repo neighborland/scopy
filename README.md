@@ -19,7 +19,9 @@ Add this line to your Gemfile:
 gem 'scopy'
 ```
 
-Scopy works with Rails 3.2 and later.
+`scopy` works with Rails 4.0 and later.
+
+Version 0.4 works with Rails 3.2 and later.
 
 ## Usage
 
