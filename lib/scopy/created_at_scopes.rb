@@ -22,11 +22,8 @@ module Scopy
         created_between(date.beginning_of_day, date.end_of_day) if date
       end
 
-      scope :created_in_week, ->(date, day_of_week = :sunday) do
-        created_between(
-          date.beginning_of_week(day_of_week),
-          date.end_of_week(day_of_week)
-        ) if date
+      scope :created_in_week, ->(date, day = :sunday) do
+        created_between(date.beginning_of_week(day), date.end_of_week(day)) if date
       end
 
       scope :created_in_month, ->(date) do
