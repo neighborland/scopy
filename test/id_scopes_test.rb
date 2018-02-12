@@ -13,34 +13,39 @@ class IdScopesTest < MiniTest::Spec
     Dog.delete_all
   end
 
-  describe ".excluding_id" do
-    it "excludes" do
-      assert_empty Dog.excluding_id(@dog.id)
-    end
-
-    it "does not exclude" do
-      assert_equal [@dog], Dog.excluding_id(@dog.id + 1)
-    end
-  end
-
-  describe ".excluding_ids" do
-    it "excludes" do
-      assert_empty Dog.excluding_ids([@dog.id])
-    end
-
-    it "does not exclude" do
-      assert_equal [@dog], Dog.excluding_ids([@dog.id + 1])
-    end
-  end
-
   describe ".excluding" do
-    it "excludes" do
+    it "excludes id" do
+      assert_empty Dog.excluding(@dog.id)
+    end
+
+    it "does not exclude id" do
+      assert_equal [@dog], Dog.excluding(@dog.id + 1)
+    end
+
+    it "excludes ids" do
+      assert_empty Dog.excluding([@dog.id])
+    end
+
+    it "does not exclude ids" do
+      assert_equal [@dog], Dog.excluding([@dog.id + 1])
+    end
+
+    it "excludes object" do
       assert_empty Dog.excluding(@dog)
     end
 
-    it "does not exclude" do
+    it "does not exclude object" do
       snoop = Dog.create
       assert_equal [@dog], Dog.excluding(snoop)
+    end
+
+    it "excludes collection" do
+      assert_empty Dog.excluding(Dog.all)
+    end
+
+    it "does not exclude collection" do
+      snoop = Dog.create
+      assert_equal [@dog], Dog.excluding(Dog.where(id: snoop.id))
     end
   end
 end
