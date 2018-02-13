@@ -1,6 +1,17 @@
-inherit_from: .rubocop_todo.yml
+AllCops:
+  TargetRubyVersion: 2.2
+  DisplayCopNames: true
+
+Metrics/LineLength:
+    Max: 90
 
 Style/AlignParameters:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/Lambda:
   Enabled: false
 
 Style/MultilineOperationIndentation:
