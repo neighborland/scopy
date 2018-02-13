@@ -25,7 +25,7 @@ Version 0.4 works with Rails 3.2 and later.
 
 ## Usage
 
-Include the concern modules you would like to use in your models:
+Include the modules you would like to use in your models:
 
 ```ruby
 class Dog < ActiveRecord::Base
@@ -70,15 +70,21 @@ Dog.created_in_year(Time.new(2013))
 ##### Scopy::IdScopes
 
 ```ruby
-Dog.excluding_id(123)
+Dog.excluding(123)
 # => dogs excluding id 123
 
-Dog.excluding_ids( [1, 2, 3] )
+Dog.excluding([1, 2, 3])
 # => dogs excluding ids 1, 2, and 3
 
 Dog.excluding(dog)
 # => dogs excluding dog
+
+Dog.excluding(Dog.where(id: [1, 2]))
+# => dogs excluding other dogs
 ```
+
+Note: `.excluding_ids` and `.excluding_id` scopes were removed in
+version 2.0. Replace those calls with `.excluding`.
 
 ##### Scopy::NameScopes
 
