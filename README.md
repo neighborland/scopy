@@ -8,7 +8,6 @@ Scopy provides common ActiveRecord scopes as ActiveSupport model concerns.
 Common scopes for the following attributes are provided:
 
 * `created_at`
-* `id`
 * `name`
 
 ## Install
@@ -30,7 +29,6 @@ Include the modules you would like to use in your models:
 ```ruby
 class Dog < ActiveRecord::Base
   include Scopy::CreatedAtScopes
-  include Scopy::IdScopes
   include Scopy::NameScopes
 ```
 
@@ -67,25 +65,6 @@ Dog.created_in_year(Time.new(2013))
 # => dogs created in 2013
 ```
 
-##### Scopy::IdScopes
-
-```ruby
-Dog.excluding(123)
-# => dogs excluding id 123
-
-Dog.excluding([1, 2, 3])
-# => dogs excluding ids 1, 2, and 3
-
-Dog.excluding(dog)
-# => dogs excluding dog
-
-Dog.excluding(Dog.where(id: [1, 2]))
-# => dogs excluding other dogs
-```
-
-Note: `.excluding_ids` and `.excluding_id` scopes were removed in
-version 2.0. Replace those calls with `.excluding`.
-
 ##### Scopy::NameScopes
 
 ```ruby
@@ -101,3 +80,14 @@ Dog.name_starts_with('snOOp')
 Dog.name_starts_with('Snoop', case_sensitive: true)
 # => dogs with names starting with 'Snoop' (case sensitive)
 ```
+
+#### Upgrading
+
+##### Version 2.0
+
+* `.excluding_ids` and `.excluding_id` scopes were removed in
+version 2.0. Replace those calls with `.excluding`.
+
+##### Version 3.0
+
+* `Scopy::IdScopes` was removed in version 3. Use `where.not(id: ids)`.

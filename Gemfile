@@ -6,8 +6,4 @@ group :test do
   end
 end
 
-if RUBY_VERSION < "2.2.2"
-  gem "activerecord", "~> 4.0"
-end
-
 gemspec
