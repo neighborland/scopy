@@ -90,4 +90,11 @@ version 2.0. Replace those calls with `.excluding`.
 
 ##### Version 3.0
 
-* `Scopy::IdScopes` was removed in version 3. Use `where.not(id: ids)`.
+* `Scopy::IdScopes` was removed in version 3. Instead, use:
+
+```ruby
+where.not(id: id)
+where.not(id: ids)
+where.not(id: model)
+where.not(id: models)
+```
