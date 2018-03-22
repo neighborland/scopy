@@ -4,7 +4,7 @@ if ENV["TRAVIS"] && RUBY_VERSION.match("2.4.")
 end
 
 require "minitest/autorun"
-require "mocha/mini_test"
+require "mocha/minitest"
 require "active_support"
 require "active_record"
 require "sqlite3"
