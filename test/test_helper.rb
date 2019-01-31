@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 if ENV["TRAVIS"] && RUBY_VERSION.match("2.4.")
   require "coveralls"
   Coveralls.wear!

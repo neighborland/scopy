@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Scopy
   module NameScopes
     extend ActiveSupport::Concern
