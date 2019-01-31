@@ -1,11 +1,40 @@
 AllCops:
-  TargetRubyVersion: 2.2
-  DisplayCopNames: true
+  TargetRubyVersion: 2.3
+
+Layout/AlignParameters:
+  Enabled: false
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+
+Layout/MultilineOperationIndentation:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
 
 Metrics/LineLength:
-    Max: 90
+  Max: 120
 
-Style/AlignParameters:
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Style/CaseEquality:
   Enabled: false
 
 Style/Documentation:
@@ -14,7 +43,7 @@ Style/Documentation:
 Style/Lambda:
   Enabled: false
 
-Style/MultilineOperationIndentation:
+Style/NumericPredicate:
   Enabled: false
 
 Style/SignalException:
@@ -22,3 +51,18 @@ Style/SignalException:
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
+
+Style/ZeroLengthPredicate:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - 'Gemfile'
+    - 'Rakefile'
+    - '*.gemspec'
