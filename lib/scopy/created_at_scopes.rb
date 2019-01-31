@@ -5,8 +5,8 @@ module Scopy
     extend ActiveSupport::Concern
 
     included do
-      scope :newest, -> { order("#{table_name}.created_at DESC") }
-      scope :oldest, -> { order("#{table_name}.created_at") }
+      scope :newest, -> { order(Arel.sql("#{table_name}.created_at DESC")) }
+      scope :oldest, -> { order(Arel.sql("#{table_name}.created_at")) }
 
       scope :created_since, ->(since) do
         where("#{table_name}.created_at >= ?", since) if since
